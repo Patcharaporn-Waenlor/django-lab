@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - SB Admin{% endblock %}
+
+{% block content %}
+<h1 class="mt-4">Contact Us</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">Contact</li>
+</ol>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-envelope me-1"></i>
+                Send Us a Message
+            </div>
+            <div class="card-body">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="inputName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="inputSubject" placeholder="Enter subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputMessage" class="form-label">Message</label>
+                        <textarea class="form-control" id="inputMessage" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
